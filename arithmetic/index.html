@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithemetic</title>
+    <style>
+        .main
+        {
+          border: 2px solid black;
+          height: 150px;
+          width: 400px;
+          border-radius: 10px;
+          padding: 40px;
+          color: white;
+          background: black;
+        }
+        .buttons
+        {
+         display: flex;
+         justify-content: space-between;
+        }
+        button
+        {
+          text-transform: uppercase;
+         
+          border-radius: 4px ;
+          
+        }
+        
+        
+      .b1:hover
+      {
+        border: 2px solid rgb(149, 244, 149);
+        background-color: rgb(33, 163, 33);
+        box-shadow: 0 5px 20px rgb(149, 244, 149);;
+        transition: 0.06;
+        font-weight: 400px;
+      }
+    .b2:hover
+    {
+      border: 2px solid rgb(217, 0, 255);
+      background-color: rgb(158, 40, 179);
+      transition: 0.06;
+      box-shadow: 0 5px 20px rgb(217, 0, 255);
+      font-weight: 400px;
+    }
+    .b3:hover
+    {
+      border: 2px solid rgb(231, 122, 140) ;
+      background-color: rgb(194, 55, 78) ;
+      transition: 0.06;
+      box-shadow: 0 5px 20px rgb(255, 122, 144);
+      font-weight: 400px;
+    }
+    .b4:hover
+    {
+      border: 2px solid rgb(3, 255, 242);
+      background-color: rgb(12, 167, 159);
+      transition: 0.06;
+      box-shadow: 0 5px 20px rgb(3, 255, 242);
+      font-weight: 400px;
+    }
+    .res
+    {
+     color: white;
+    }
+    </style>
+</head>
+<body><div class="main">
+  <label>Enter a number : </label>&nbsp;&nbsp;<input id="one"><br><br>
+  <label>Enter a number : </label>&nbsp;&nbsp;<input id="two"><br><br>
+  <div class="buttons">
+  <button class="b1" onclick="add()">Add</button>
+  <button class="b2" onclick="sub()">Subtration</button>
+  <button class="b3" onclick="mul()">multiply</button>
+  <button class="b4" onclick="div()">division</button>
+</div>
+<div class="result">
+  <h2 class="res" id="res">Result:</h2>
+</div>
+</div>
+    <script>
+        var in1=document.getElementById("one");
+        var in2=document.getElementById("two");
+        var mainres=document.getElementById("res")
+       
+        function add()
+        {
+             var b1=Number(in1.value);
+             var b2= Number(in2.value);
+             let total= b1+b2;
+            mainres.textContent="The Addition of two num is :"+total;
+        }
+       
+        function sub()
+        {
+             var b1=Number(in1.value);
+             var b2= Number(in2.value);
+             let total= b1-b2;
+             mainres.textContent="The subtraction of two num is :"+total;  
+        }
+        function mul()
+        {
+             var b1=Number(in1.value);
+             var b2= Number(in2.value);
+             let total= b1*b2;
+             mainres.textContent="The Multiplication of two num is :"+total;   
+        }
+        function div()
+        {
+             var b1=Number(in1.value);
+             var b2= Number(in2.value);
+             let total= b1/b2;
+             mainres.textContent="The Division of two num is :"+total;   
+        }
+      </script>
+</body>
+</html>
