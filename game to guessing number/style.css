@@ -1,0 +1,36 @@
+.main
+{
+    border: 1px solid black;
+    height: 300px;
+    width: 600px;
+    padding-left: 20px;
+    background-color: white;
+    border-radius: 5px;
+    filter: drop-shadow(5px 4px 2px #9370db)
+    
+}
+input{
+    background-color:#d5d5fc;
+    border:none;
+    border-radius: 10px;
+    padding: 9px;
+    width: 200px;
+    filter: drop-shadow(5px 4px 2px #c3c3fd)
+
+}
+button
+{    
+        border: 1px solid #9370db;
+        background-color: #9370db;
+        color: #ffffff;
+        height: 35px;
+        width: 100px;
+        padding:1px;
+        margin-left: 30px;
+        border-radius: 10px;
+}
+button:hover
+        {
+        background-color: #8854C0;
+        filter: drop-shadow(5px 4px 2px #9370db)
+        }
