@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        .parent 
+        {
+            border: 1px solid black;
+            height: auto;
+            width: 500px;
+            border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+        }
+        h1
+         {
+            padding-left: 10px;
+            text-align: center;
+         }
+        .inputtab 
+        {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input
+         {
+            border: 1px solid black;
+            border-radius: 20px;
+            height: 30px;
+            width: 200px;
+            padding-left: 10px;
+        }
+        #addbtn
+         {    
+            padding: 5px 10px;
+            cursor: pointer;
+            border: 1px solid #9370db;
+            background-color: #9370db;
+            color: #ffffff;
+        }
+        #addbtn:hover
+        {
+            background-color: #8854C0;
+            filter: drop-shadow(5px 4px 2px #9370db)
+        }
+        .sublist 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid black;
+            border-radius: 10px;
+            color: #004085;
+            background: aliceblue;
+            border: 1px solid #84c5fe;
+        }
+        li 
+        {
+            list-style: none;
+            flex-grow: 1;
+            padding-left: 10px;
+        }
+        .delbutton
+         {
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #004085;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h1>To-Do List</h1>
+        <div class="inputtab">
+            <input id="inputbox" placeholder="Write something...">
+            <button onclick="add()" id="addbtn">Add item</button>
+        </div>
+        <div class="list">
+            <ul id="ul">
+                <!-- List items will appear here -->
+            </ul>
+        </div>
+    </div>
+    <script>
+        function add() {
+            let inputvalue = document.getElementById("inputbox");
+            if (inputvalue.value.trim() !== "") {
+                let ul = document.getElementById("ul");
+                let li = document.createElement("li");
+                let div = document.createElement("div");
+                div.className = "sublist";
+                let button = document.createElement("button");
+                button.className = "delbutton";
+                button.onclick = function(event) { deleteItem(event); };
+                button.textContent = "Delete";
+                li.textContent = inputvalue.value;
+                div.appendChild(li);
+                div.appendChild(button);
+                ul.appendChild(div);
+                inputvalue.value = ""; // to clear the input box
+            }
+        }
+
+        function deleteItem(event) {
+            let button = event.target;
+            let div = button.parentElement;
+            div.remove();
+        }
+    </script>
+</body>
+</html>
