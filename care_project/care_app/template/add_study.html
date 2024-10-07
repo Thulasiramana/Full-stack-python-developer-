@@ -1,0 +1,105 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add page </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .main_div
+   
+   {
+       border: 2px solid #5b40f7;
+       height: 500px;
+       width: 600px;
+       padding: 10px;
+       padding-left:30px;
+       border-radius: 10px;
+       font-family: "Blinker", sans-serif;
+       font-weight: 600;
+       font-style: normal;
+   }
+   body
+   {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+   h1
+   {
+   font-family: "Blinker", sans-serif;
+   font-weight: 600;
+   font-style: normal;
+   text-align: center;
+   }
+   input
+   {
+   border: 2px solid #5b40f7;
+   border-radius: 4px;
+   margin-left: 77px;
+   padding: 5px;
+   }
+   select
+   {
+   border: 2px solid #5b40f7;
+   border-radius: 4px;
+   margin-left: 75px;
+   padding: 5px;
+   }
+   textarea
+   {
+   border: 2px solid #5b40f7;
+   border-radius: 4px;
+   margin-left: 38px;
+   }
+   .sponder{
+   margin-left: 62px;
+   }
+   .btn
+   {
+   padding: 10px 20px;
+   font-size: 16px;
+   border: 2px solid #7b68ee;
+   background-color:#7b68ee;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-right: 10px;
+   height: 40px;
+   }
+   
+   .btn:hover {
+   background-color: #5b40f7;
+   }
+   .bottom
+   {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   
+   }
+   .btn2{
+   text-decoration: none;
+   }
+    </style>
+</head>
+<body>
+    <div class="main_div">
+    <h1>Add Study</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="bottom">
+            <button class="btn" type="submit">Save</button>
+            <p>
+                <a class="btn btn2" href="{% url 'study_list' %}">Cancel</a>
+            </p>
+        </div>
+        
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> care2data </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <style>
+        button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #7b68ee;
+    background-color:#7b68ee;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #5b40f7;
+}
+.head{
+    font-family: "Blinker", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+}
+.table_view,.button_tab
+{
+justify-content: center;
+align-items: center;
+display: flex;
+}
+td,th
+{
+    padding: 10px;
+}
+th
+{
+    border: 2px solid #7b68ee;
+    background-color:#9b8bf4;
+    color: #fff;
+    font-family: "Blinker", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+}
+td
+{
+    font-family: "Blinker", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    color: rgb(38, 38, 38);  
+}
+table
+{
+    border: 2px solid #5b40f7;
+}
+a:hover
+{
+color: red;
+}
+    </style>
+</head>
+<body>
+    <h1 class="head">Study Management System </h1>
+    <div class="table_view">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Study Name</th>
+                <th>Study Phase</th>
+                <th>Sponsor Name</th>
+                <th>Study Description</th>
+                <th>Action </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for study in studies %}
+            <tr>
+                <td>{{ study.study_name }}</td>
+                <td>{{ study.study_phase }}</td>
+                <td>{{ study.sponsor_name }}</td>
+                <td>{{ study.study_description }}</td>
+                <td>
+                    <a href="{% url 'view_study' study.pk %}">View</a> |
+                    <a href="{% url 'edit_study' study.pk %}">Edit</a> |
+                    <a href="{% url 'study_delete' study.id %}" 
+                           onclick="return confirm('Are you sure you want to delete this study ?');" 
+                           class="btn btn-danger">
+                           Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="button_tab">
+    <p>
+        <a href="{% url 'add_study' %}"><button>Add study </button> </a>
+    </p>
+</div>
+   
+</body>
+</html>

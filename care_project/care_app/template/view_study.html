@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> view page </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .div_box
+        {
+            border: 2px solid #5b40f7;
+            height: 300px;
+            width: 300px;
+            padding: 10px;
+            padding-left:30px;
+            border-radius: 10px;
+            font-family: "Blinker", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+
+        }
+        body
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        h1
+        {
+            margin-left: 70px;
+            color:#7b68ee;
+        }
+        button
+         {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid #7b68ee;
+            background-color:#7b68ee;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover
+         {
+        background-color: #5b40f7;
+        }
+        /* color:#212529" */
+    </style>
+</head>
+<body>
+    <div class="div_box">
+        <h1>View Study</h1>
+        <p><strong>Study Name:</strong> <span style="color: #543ece;"> {{ study.study_name }}</span></p>
+        <p><strong>Study Description:</strong> <span style="color: #543ece;">  {{ study.study_description }} </span></p>
+        <p><strong>Study Phase:</strong> <span style="color: #543ece;">  {{ study.study_phase }} </span></p>
+        <p><strong>Sponsor Name:</strong> <span style="color: #543ece;">  {{ study.sponsor_name }}</span></p>
+        <p>
+            <a href="{% url 'study_list' %}"> <button> Cancel </button> </a>
+        </p>
+    </div>
+</body>
+</html>
