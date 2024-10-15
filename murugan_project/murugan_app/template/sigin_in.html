@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classy sign_up</title>
+    <link rel="stylesheet" href="{% static '/siginin.css' %}">
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+             <img class="top_img" src=" {% static 'undraw_welcome_cats_thqn-removebg-preview.png' %}">
+            <img class="img_left" src=" {% static 'undraw_Welcome_re_h3d9-removebg-preview.png' %}"></div>
+            
+        <div class="right">
+            <div class="sign_up_main">
+                <form method="post" onsubmit="return validation();">
+                    {% csrf_token %}
+                    <br>
+                    <h3> New To Classy Create a Account ! </h3> <br>
+                    <label> Your Name : </label><br>
+                    <input id="one" type="text" placeholder="Enter your Name " name="name" required><br><br>
+                    <label> Enter your Email Id : </label><br>
+                    <input type="email" name="email" required><br><br>
+                    <label> Enter your Phone Number : </label><br>
+                    <input type="number" placeholder="With country Code" name="phone_number" required><br><br>
+                    <label> Enter your PassWord : </label><br>
+                    <input type="password" placeholder="At least a Charater" name="password" id="pass" required><br><br>
+                    <label> Re-enter your PassWord : </label><br>
+                    <input type="password" id="re"><br><br>
+                    <button onclick="send()" >Countinue</button>
+                        <br>
+                        <br>
+                        <hr>
+                     <p>By creating an account, you agree to Classy's <a href="#" onclick="send()"> Conditions of Use </a> and <a href="#"> Privacy Notice.</a>
+                        <br>
+                        </form>
+                        </div>
+        </div>
+    </div>
+    
+    <script>
+        var emailExists = "{% if email_exists %}true{% else %}false{% endif %}";
+        console.log("emailExists:", emailExists);  // Debugging step
+    
+        if (emailExists === "true") {
+            alert("Email already exists! Please log in or use a different email.");
+        }
+    </script>
+    
+    <script>
+        function validation()
+         {
+            let pass_word = document.getElementById("pass").value;
+            let re_pass = document.getElementById("re").value;
+            if (pass_word !== re_pass)
+            {
+                alert("Passwords do not match!");
+                return false; // Prevent form submission
+            }
+            else {
+            function send()
+             {
+                alert("the OTP has send to your Email ")
+                return true
+             } 
+             send() 
+        }}
+    </script>
+</body>
+</html> 

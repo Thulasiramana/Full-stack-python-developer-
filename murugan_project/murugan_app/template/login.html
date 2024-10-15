@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classy shoppy login </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href=" {% static './login.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div class="left_part">
+<img src="{% static './undraw_login_re_4vu2.svg' %}">
+    </div>
+    <div class="right_path">
+        <div class="log_div">
+            <h2 class="aut_cat"> Authenticate your self ! </h2>
+            <br>
+            <div class="log_content">
+             <p class="log_login">
+             Jump back in ! 
+             </p>
+            </div>
+         <form method="POST" action="{% url 'login' %}">
+             {% csrf_token %}
+             <label class="email" for="email">Email :</label>
+             <input type="email" name="email" required>
+             <br>
+             <br>
+             <label for="password">Password :</label>
+             <input type="password" name="password" required>
+             <br>
+             <br>
+             <button type="submit">Login</button>
+         </form>
+     </div>
+    </div>
+</div>
+</head>
+<body>
+</body>
+</html> 
+

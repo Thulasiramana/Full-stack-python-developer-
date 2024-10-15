@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic product  </title>
+
+    <link rel="stylesheet" href="{% static './product.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static './index.css' %}">
+</head>
+
+<body>
+    <div class="main_nav">
+        <h2 class="logo">Classy shopy</h2>
+        <form method="post">
+            <div class="search">
+                <input class="input_ser" type="text" placeholder="Search products...">
+                <button class="input_btn" > <i class="fa-solid fa-magnifying-glass fa-beat"></i></button>
+            </div>
+        </form>
+        <a href="#" class="contact">contact us </a>
+        <a href="#" class="user_details"><i class="fa-regular fa-circle-user"></i> &nbsp;&nbsp;{{ user_name }}</a>
+        <a href="{% url 'cart_view'%}" class="cart_product" >cart <i class="fa-solid fa-cart-shopping fa-bounce"></i></a>
+        <a href="{% url 'logout' %}" class="login aut">log out</a>
+
+    </div>
+<div class="container">
+    {% for products in product %}
+    <div class="grid-item">
+        {% if products.image %}
+            <img src="{{ products.image.url }}">
+        {% else %}
+                    <p> no image available </p>
+        {% endif %}
+            <p class="brand"><span style="color:#212529">Product name : </span> {{ products.name }} </p>
+            <!-- <p> id : {{ products.id }}</p> -->
+            <p class="price"><span style="color:#212529">Price :</span>  &#8377; {{ products.price }} </p>
+            <!-- <p class="review"><span style="color:#212529">Ratings :</span> 5355 <i class="fa-solid fa-star"></i></p> -->
+            <p class="des"><span style="color:#212529">Description :</span> {{ products.description }}</p>
+            <p class="stock"><span style="color:#212529">Stock : </span> hurry up onlu {{ products.stock }} left ! </p>
+            <br>
+            {% if products.id %}
+            <a href="{% url 'add_to_cart' products.id %}">Add to Cart</a>
+            {% else %}
+            <p>Product ID not available</p>
+            {% endif %}
+            <a href="#" class="buy">Buy now</a>
+    </div>
+    {% endfor %}
+</div>
+<!-- footer -->
+<div class="main_foot">
+    <div class="left_foot">
+      <h2 class="logo">Classy shopy</h2><br>
+      <p>
+        contact us on Social Media :</p><br>
+        <div class="icon_class">
+        <a href="https://www.linkedin.com/in/thulasiRamanb" class="icon" target="_blank"><i class="fa-brands fa-linkedin-in"></i> </a>
+        <a href="https://t.me/itz_Thulasi" class="icon" target="_blank"><i class="fa-brands fa-telegram"></i> </a>
+        <a href="https://github.com/Thulasiramana" class="icon" target="_blank"><i class="fa-brands fa-github"></i> </a>
+        <a href="https://wa.me/916383367438" class="icon" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+      <br>
+      <div class="mail_con">
+        <p>Contact via Mail : <p>
+          <a href="mailto:classyshoppz@gmail.com?subject=Inquiry&body=Hello !" target="_blank">&nbsp; classyshoppz@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="right_foot">
+      <p> We Miss you  ! Wanna make a <a href="{% url 'logout' %}" class="foot_si"> log out </a> </p>
+      <br><br>
+<h4>Any Query / Issue ? </h4>
+<h3 class="logo"> Drop Here &nbsp; <i class="fa-solid fa-arrow-down"></i> </h3>
+<br>
+<a href="mailto:classyshoppz@gmail.com?subject=Inquiry&body=Hello Classy Shoppy i have a issuse with Your !" class="send_btn" target="_blank">&nbsp; Send &nbsp; Query &nbsp;  <i class="fa-solid fa-paper-plane"></i> </a>
+    </div>
+  </div>
+  <div class="copy_cat">
+    <p>Copyright &copy; <a href="#" style="text-decoration: none; color:white"> classy_shoppz</a></p>
+  </div>
+<!-- end footer -->
+</body>
+</html>

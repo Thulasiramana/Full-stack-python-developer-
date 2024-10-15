@@ -1,0 +1,90 @@
+*
+    {
+        padding: 0px;
+        margin: 0px;
+    }
+    body
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .main_verify
+    {
+        border: 2px solid #4f00ed;
+        height: 450px;
+        width: 670px;
+        display:flex;
+    }
+    .left_verify
+    {
+        /* border: 4px solid green; */
+        height:450px;
+        width: 320px;
+    }
+    .right_verify
+    {
+        /* border: 1px solid blue; */
+        width: 400px;
+        height: 400px;
+        padding: 5px;
+        padding-left: 10px;
+        margin-top: 30px;
+        border-radius: 15px;
+    }
+    .left_image
+    {
+     height: 400px;
+     width: 350px;
+     margin-top:90px;
+    }
+    .content
+    {
+        color: gray;
+    }
+    .value_mail
+    {
+        color: red;
+        font-size: 13px;
+    }
+    input
+        {
+         width: 250px;
+         height: 23px;
+         border-radius: 2px;
+         border: 1px solid #a679ff;
+         margin-top: 5px;
+         padding: 4px;
+        }
+        button
+        {
+            border: 2px solid #7b68ee;
+            background-color:#7b68ee;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-left: 100px;
+        }
+        button:hover
+        {
+            background-color: #5b40f7;
+        }
+        .terms
+        {
+            color: gray;
+            font-size: 12px;
+        }
+        .dumy_signin
+        {
+            width: 190px;
+            text-decoration: none;
+            margin-left: 110px;
+            margin-top: 40px;
+            border: 1.5wpx solid #7b68ee;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: 300px;
+            color:#7b68ee;
+        }

@@ -1,0 +1,197 @@
+*
+        {
+            margin: 0px;
+            padding: 0px;
+            
+        }
+        .main_nav
+        {
+            display: flex;
+            /* border: 2px solid #a679ff; */
+            justify-content: space-around;
+            padding: 10px ;
+            align-items:center;
+            background-color: #f8f9fa;
+            font-family: "Blinker", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+.logo
+{
+    color: #a679ff;
+}
+.search
+{
+    border: 2px solid #a377fc;
+    width: 400px;
+    padding: 8px;
+    border-radius: 5px;
+}
+.search:hover
+{
+    border: 2px solid #5b40f7;
+}
+.input_ser
+{
+    border: none;
+    background: transparent;
+    font-family: "Blinker", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    width: 370px;
+}
+.input_btn
+{
+    border: none;
+    /* margin-left: 210px; */
+    background: transparent;
+}
+.contact , .user_details
+{
+    color: #212529;
+}
+.aut
+{
+    border: 2px solid #5b40f7;
+    border-radius: 5px;
+    color: #7755ba;
+    background-color: white;
+    padding:9px;
+    width: 60px;
+    padding-left: 24px;
+
+}
+a
+{
+    text-decoration: none;
+}
+.fa-user
+{
+gap: 10px;
+}
+.aut:hover
+{
+border: 2px solid #7b68ee;
+background-color:#7b68ee;
+color: white;
+transition: 0.6s ease;
+}
+a:hover
+{
+color:#5b40f7;
+}
+/* footer css */
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+.logo
+{
+    color: #a679ff;
+}
+.main_foot
+{
+    display: flex;
+    background-color: #f8f9fa;
+    font-family: "Blinker", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    border:none;
+    border-top: 1px solid #a679ff;
+    justify-content: space-around;
+}
+.icon_class
+{
+height: 50px;
+width: 200px;
+display: flex;
+justify-content:space-evenly;
+align-items: center;
+}
+.social_icons{
+    display: flex;
+    margin-top: 5em;
+    gap: 40px;
+}
+.icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    text-decoration: none;
+}
+.icon:hover{
+    color: rgb(110 ,87 ,224);
+}
+.mail_con
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left_foot
+{
+    height: 200px;
+    width: 300px;
+    padding: 10px;
+}
+.right_foot
+{
+    color: rgb(68 ,68,68);
+    height: 200px;
+    width: 300px;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+.send_btn
+{
+border: 2px solid #7b68ee;
+background-color:#7b68ee;
+color: white;
+text-decoration: none;
+padding: 8px;
+border-radius: 5px;
+}
+.foot_si
+{
+    border: 2px solid #7b68ee;
+    background-color:#7b68ee;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    height: 10px;
+    width: 20px;
+    margin-left: 20px;
+    border-radius: 5px; 
+}
+.copy_cat
+{
+    border: 2px solid #7b68ee;
+    background-color:#7b68ee;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.send_btn:hover
+{
+color: #ffff;
+background-color: #4c34cf;
+}
+.foot_si:hover
+{
+color: #ffff;
+background-color: #4c34cf;
+}
+.main_foot
+{
+    position: fixed
+}
