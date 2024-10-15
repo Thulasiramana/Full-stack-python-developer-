@@ -1,0 +1,61 @@
+<!-- <body>
+    <h1>Image with Background Removed</h1>
+    <img src="{{ image_url }}" alt="Processed Image" height="200px" width="200px">
+    
+    <p><a href="{% url 'upload_file' %}">Upload another image</a></p>
+</body> -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'view.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> removed Image  </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Matemasie&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav_start">
+           <ul>
+               <li><h5 class="logo">Remove Bg</h5></li>
+               <li><a href="#"> Remove Background</a></li>
+               <li><a href="./"> How to Use </a></li>
+           </ul>
+           <div class="nav_end">
+               <button>Log in </button>
+               <button>Sign up</button>
+           </div>
+       </div>
+    </div>
+    <div class="conetnt">
+        <div class="sub_left">
+            <video class="video1" width="600" controls autoplay loop >
+                <source src="{% static 'manuel_compressed.mp4' %}" type="video/mp4">
+                <source src="pic_bg.mp4" type="video/ogg">
+            </video>
+            <h1 class="vi_t">Remove image <br> Background </h1>
+            <h4 class="vi_2"> Enjoy our BG For Free 100 % </h4>
+        </div>
+        <div class="sub_right1">
+            <div class="left_right">
+                <img class="img_view" src="{{ image_url }}" alt="Processed Image">
+            </div>
+                <div class="right_right">
+                    <p>
+                        <a href="{{ image_url }}" download="bg_removed_image.png"><button class="another another1"> Download Image&nbsp;<i class="fa-solid fa-download fa-bounce"></i> </button></a>
+                        
+                    </p>
+                    <p><a class="another" href="{% url 'upload_file' %}"> Upload another image</a></p>
+                </div> 
+        </div>
+    </div>
+    <hr>
+
+
+
+ 

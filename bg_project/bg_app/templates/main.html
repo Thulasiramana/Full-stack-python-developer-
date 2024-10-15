@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title> classy Background remover ! </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Matemasie&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav_start">
+           <ul>
+               <li><h5 class="logo">Remove Bg</h5></li>
+               <li><a href="#"> Remove Background</a></li>
+               <li><a href="./"> How to Use </a></li>
+           </ul>
+           <div class="nav_end">
+               <button>Log in </button>
+               <button>Sign up</button>
+           </div>
+       </div>
+    </div>
+    <div class="conetnt">
+        <div class="sub_left">
+            <video class="video1" width="600" controls autoplay loop >
+                <source src="{% static 'manuel_compressed.mp4' %}" type="video/mp4">
+                <source src="pic_bg.mp4" type="video/ogg">
+            </video>
+            <h1 class="vi_t">Remove image <br> Background </h1>
+            <h4 class="vi_2"> Enjoy our BG For Free 100 % </h4>
+        </div>
+        <div class="sub_right" id="dropZone" >
+            <div class="upload">
+             <form method="POST" id="uploadForm" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <button type="button" id="selectImageButton" class="upload_img" > Upload image </button>
+                <input type="file" id="fileInput" accept="image/*" name="image" style="display:none;">
+             </form>
+            </div>
+            <div class="up_con">
+                <p class="up_con_sec1">Or drop a file,</p> 
+                <br>
+                <p class="up_con_sec2">paste image or <b class="url" onclick="url_click()">Url</b> </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <script>
+        // Handle clicking the upload button
+        document.getElementById('selectImageButton').addEventListener('click', function() {
+            document.getElementById('fileInput').click();  // Opens the file input dialog
+        });
+    
+        // Submit the form when the file is selected
+        document.getElementById('fileInput').addEventListener('change', function() {
+            var file = this.files[0];  // Get the selected file
+            if (file) {
+                // You can process the file here or submit the form
+                document.getElementById('uploadForm').submit();  // Submit the form
+            }
+        });
+    
+        // Handle drag-and-drop functionality
+        var dropZone = document.getElementById('dropZone');
+    
+        dropZone.addEventListener('dragover', function(event) {
+            event.preventDefault();  // Prevent default drag behavior
+            // dropZone.style.backgroundColor = "#f0f0f0";  // Change style when dragging over
+        });
+    
+        dropZone.addEventListener('dragleave', function(event) {
+            event.preventDefault();
+            // dropZone.style.backgroundColor = "";  // Reset background when leaving
+        });
+    
+        dropZone.addEventListener('drop', function(event) {
+            event.preventDefault();
+            // dropZone.style.backgroundColor = "";  // Reset background
+    
+            var file = event.dataTransfer.files[0];  // Get the dropped file
+            if (file) {
+                document.getElementById('fileInput').files = event.dataTransfer.files;  // Assign file to input
+                document.getElementById('uploadForm').submit();  // Submit the form
+            }
+        });
+    </script>
+    
+</body>
+</html>

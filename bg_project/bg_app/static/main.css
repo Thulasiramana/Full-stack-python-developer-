@@ -1,0 +1,172 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+.nav_start
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ ul
+{
+    display: flex;
+    list-style-type: none;
+    gap: 40px; 
+    align-items: center;
+    justify-items: space-between;
+    height: 40px;
+    padding: 10px;
+}
+.nav_start a
+{
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:200px;
+    color: rgb(94, 94, 94);
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+
+.nav_end
+{
+    display: flex;
+    gap: 80px;
+    padding: 20px;
+}
+.logo
+{ 
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+.nav
+{
+    padding-left:200px;
+    padding-right: 200px;
+    height: 70px;
+    border-bottom: 0px solid black;
+     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(99, 96, 96, 0.23) 0px 3px 6px; 
+}
+.nav_end button
+{
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color:rgb(0, 0, 0);
+    color:white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nav_end button:hover
+{
+background-color: rgb(94, 94, 94);
+}
+.video1
+{
+    height: 300px;
+    width: 400px;
+    border-radius: 20px;
+    border-top-left-radius:20px;
+    border-top-left-radius:20px;
+    border: none;
+    position: relative;
+    padding-left: 200px;
+    top: 10px;
+}
+.conetnt
+{
+display: flex;
+height: 620px;
+}
+.vi_t
+{
+font-family: "Poppins", sans-serif;
+font-weight:700;
+font-style:normal;
+font-size: 60px;
+color: #454544;
+position: relative;
+left: 180px;
+top: 20px;
+}
+.vi_2
+{
+font-family: "Poppins", sans-serif;
+font-weight:700;
+font-style:normal;
+font-size: 20px;
+color: #454544;
+position: relative;
+left: 180px;
+top: 30px;  
+}
+.upload
+{
+    display: flex;
+    border: 1px solid gray;
+    height: 330px;
+    width: 400px;
+    position: relative;
+    top: 100px;
+    left: 150px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    align-items: center;
+    justify-content: center ;
+}
+.upload_img
+{
+padding: 10px 20px;
+font-size: 16px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+margin-bottom: 30px;
+}
+
+button:hover {
+background-color:#0056b3;
+}
+.up_con
+{
+    position: relative;
+    bottom:25px;
+    left: 290px;
+    font-family: "Poppins", sans-serif;
+    font-weight:700;
+    font-style:normal;
+    font-size: 20px;
+    color: #454544;
+    bottom:40px;
+}
+.up_con_sec1
+{
+    font-size: 20px;
+}
+.up_con_sec2
+{
+    font-size: 12px;
+    position: relative;
+    bottom:16px;
+    color: #54616C;
+}
+.url
+{
+     text-decoration: underline;
+}
+.sub_left
+{
+    margin-top: 60px;
+}
+.sub_right
+{
+    margin-left:80px;
+    margin-top: 40px;
+}
+

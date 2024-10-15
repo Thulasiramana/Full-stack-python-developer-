@@ -1,0 +1,59 @@
+.img_bor
+{
+    height: 100px;
+    width: 400px;
+}
+.sub_right1
+{
+    border: 1px solid gray;
+    height: 500px;
+    width: 700px;
+    display: flex;
+    position: relative;
+    top: 70px;
+    left: 150px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    align-items: center;
+    justify-content: center ;
+}
+.left_right
+{
+    height: 400px;
+    width: 350px;
+    border: 2px solid#007bff;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-image: url(./transprent.png);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.img_view
+{
+    height: 300px;
+    width: 300px;
+}
+.another
+{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 20px;   
+}
+.another1
+{
+position: relative;
+top:100px
+}
+.another:hover
+{
+background-color:#0056b3;  
+transition: 0.3s ease;     
+}
