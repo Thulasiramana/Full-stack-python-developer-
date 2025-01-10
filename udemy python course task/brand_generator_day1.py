@@ -1,0 +1,5 @@
+city=input("Enter Your city name : " )
+Name=(input("Enter Your good Name : "))
+names=Name.title()
+Luck_num=input("Enter Your Lucky number : ")
+print("congrats your brandname was generated successfully !" + names + "@" + city + Luck_num)
