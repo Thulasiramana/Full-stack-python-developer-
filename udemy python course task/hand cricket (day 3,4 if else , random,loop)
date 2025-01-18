@@ -1,0 +1,49 @@
+print("""welcome to hand criket ! 
+      how to play ?
+      choose whether You are bating or bolling : 
+      Enter Bat for bating
+      Enter Ball for bolling
+      after choosing please enter the number ! (1-6)
+      when you both reaches the same number its declare as OUT """)
+import random 
+score =0
+choise=input("Enter Your choise : ")
+choise=choise.title() #to convert first letter to captital
+if choise not in ["Ball" ,"Bat"]:
+    print("please choose valid option : ")
+
+if choise == "Bat":
+    print("""congrats You choosen Batting : 
+    now your initial score is 0 
+    by playing you can increase a score : """)
+    out=True
+    while out:
+        ran_number=random.randint(1,6)
+        bating_score=int(input("Enter the number for batting  : "))
+        if bating_score<=6:
+            if ran_number != bating_score:
+                score=score+bating_score
+                print(f"your score is {score}")
+            elif ran_number == bating_score:
+                print(f"oops you loss in match ! , your score is {score} ")
+                out=False
+        else:
+            print("choose a number b/w 1-6")
+
+if choise == "Ball":
+    print("""congrats You choosen Boulling : 
+    you can make a boulling by enter the number :
+    if you and oppoent reaches same it declare as out :""")
+    game_start=True
+    while game_start:
+        ran_number=random.randint(1,6)
+        boulling_value=int(input("Enter the number : "))
+        if boulling_value<=6:
+                if ran_number != boulling_value:
+                    score=score+ran_number
+                    print(f"opponent score is {score}")
+                elif ran_number == boulling_value:
+                    print(f" opponent was loos ! by {score} ")
+                    game_start=False #indicate that game over 
+        else:
+              print("choose a number b/w 1-6")
