@@ -1,0 +1,22 @@
+def calculate_love_score(name1,name2):
+    letter1=["t","r","u","e"]
+    letter2=["l","o","v","e"]
+    name1_app=[]
+    name2_app=[]
+    value=name1+name2
+    
+    for i in value:
+        if i in letter1:
+            name1_app.append(i)
+    for j in value:
+         if j in letter2:
+             name2_app.append(j)
+    count1=len(name1_app)
+    count2=len(name2_app)
+    count1=str(count1)
+    count2=str(count2)
+    print(count1 + count2)
+    
+name1 = "angela yu" 
+name2 = "jack bauer"
+calculate_love_score(name1,name2)
