@@ -1,0 +1,39 @@
+import pandas as pd
+weather={
+    "day":['monday','tuesday','wednesday','thursday','friday','saturday','sunday'],
+    "tem":[65,73,82,74,76,67,98],
+    "condition":["sunny","rainy","cloud","rainy","rainy","rainy","sunny"]
+}
+data=pd.DataFrame(weather) #converting a dict to dataframe
+
+high_temp=data.tem.max() # to get max tem accour
+
+high_tem_day= data[data.tem == high_temp]["day"] # to get max tem occur in day 
+
+count_of_rain=data["condition"].value_counts()["rainy"] #value_counts() is used to count the value is occur in the condition 
+
+count_of_cloud=data.condition.value_counts()["cloud"] 
+
+count_of_sunny=data.condition.value_counts()["sunny"] 
+
+maxi_value=[count_of_rain,count_of_cloud,count_of_sunny]
+conditions = ["rainy", "cloud", "sunny"]
+
+max_count=max(maxi_value)
+
+max_condition = conditions[maxi_value.index(max_count)] # to get a most occurs sesons 
+
+#to find a avaerage temperature of the week 
+avg=data.tem.mean()
+
+#output of the dataset
+
+print(data)
+print("-----------")
+print(f"the {high_tem_day} occurs more temperature of : {high_temp}")
+print("-----------")
+print(f"it is a {max_condition} season ")
+print("-----------")
+print(f" the average tem of this week is : {avg:.2f}")
+
+csv_file=data.to_csv() # to convert to csv file 
