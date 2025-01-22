@@ -1,0 +1,60 @@
+print(""" welcome to python bank system 
+1. Create Account
+2. Deposit Money
+3. Withdraw Money
+4. Check Balance
+5. Exit""")
+
+user={} #to store a details for customers : 
+while True:
+    choise=int(input("Enter your choise : "))
+    
+#choise 1 for creating a new account 
+    if choise==1:
+        account_number = int(input("Enter account number:"))
+        #to check not a user for creating a new account: 
+        if account_number not in user:
+            user_name = input("Enter your name:")
+            initial_deposite = int(input("Enter initial deposit:"))
+            user[account_number]={"user_name":user_name,"initial_balance":initial_deposite}
+            print(f"Account created successfully! , your account number was {user[account_number]} ")
+        else:
+            print("there was an isssue in generating Account_number please create another one : ")
+        
+    if choise==2:
+        account_number = int(input("Enter account number: "))
+        if account_number in user:
+            amount =int(input("Enter deposit amount:"))
+            initial_deposite=initial_deposite+ammount
+            user[account_number]["initial_balance"] += amount
+            new_balance=user[account_number]["initial_balance"]
+            print(f"Deposit successful ! New balance:{new_balance}")
+        else:
+            print("Enter your account number correctly ! ")
+
+        
+    if choise==3:
+        account_number = int(input("Enter account number: "))
+        if account_number in user:
+            ammount_to_withdraw = int(input("Enter amount to withdraw :"))
+            if ammount_to_withdraw > user[account_number]["initial_balance"]:
+                    print("insufficent balance...")
+            else:
+                initial_deposite=initial_deposite-ammount_to_withdraw
+                user[account_number]["initial_balance"] -= ammount_to_withdraw
+                new_balance=user[account_number]["initial_balance"]
+                print(f"withdrawed successful! New balance:{new_balance}")
+        else:
+            print("Enter your account number correctly ! ")
+        
+    if choise==4:
+        account_number = int(input("Enter account number: "))
+        if account_number in user:
+            balance = user[account_number]["initial_balance"]
+            print(f"Your balance is {balance}")
+        else:
+            print("Enter your account number correctly ! ")
+        
+    if choise==5:
+        print("thank you for using the banking system ")
+        break
