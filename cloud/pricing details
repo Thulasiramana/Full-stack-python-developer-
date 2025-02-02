@@ -1,0 +1,36 @@
+from google.auth import default
+from googleapiclient.discovery import build
+import json
+
+# Authenticate using Application Default Credentials (ADC)
+credentials, project = default()
+service = build('cloudbilling', 'v1', credentials=credentials)
+
+# Billing Account ID (Replace with your actual ID)
+billing_account = "billingAccounts/XXXXX"  # 🔹 Replace with your Billing Account ID
+
+# Compute Engine Service ID (Fixed for Compute Engine)
+compute_engine_service = "services/6F81-5844-456A"
+
+# Fetch all SKUs for Compute Engine
+response = service.services().skus().list(parent=compute_engine_service).execute()
+
+# Filter only VM pricing SKUs
+vm_skus = [
+    sku for sku in response.get("skus", [])
+    if "Core" in sku.get("description", "") or "RAM" in sku.get("description", "")
+]
+
+# Save filtered data to a JSON file
+with open("gcp_vm_pricing.json", "w", encoding="utf-8") as file:
+    json.dump(vm_skus, file, indent=4)
+
+# Save VM pricing in a clean text format
+with open("gcp_vm_pricing.txt", "w", encoding="utf-8") as file:
+    for sku in vm_skus:
+        name = sku.get("description", "Unknown VM Type")
+        price = sku["pricingInfo"][0]["pricingExpression"]["tieredRates"][0]["unitPrice"]
+        price_str = f"{price['currencyCode']} {price['units']}.{price.get('nanos', 0)}"
+        file.write(f"{name}: {price_str} per hour\n")
+
+print("✅ VM pricing details saved to 'gcp_vm_pricing.txt' and 'gcp_vm_pricing.json'")
